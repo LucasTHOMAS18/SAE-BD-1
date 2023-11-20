@@ -1,4 +1,4 @@
-Hotel[codeH, nomH, GPS, adresseH]
+Hotel[codeH, nomH, GPS, adresseH, qualite]
 PK: codeH
 
 Chambre[codeH, numC, capacite, superficie]
@@ -13,10 +13,11 @@ FK: codeH ⊆ Hotel (codeH)
 Personne[idPersonne, nomPers, adresserPers, dateNaissancePers]
 PK: idPersonne
 
-Personnel[idPersonnel, fonction, dep]
+Personnel[idPersonnel, fonction, codeH, nomDep]
 PK: idPersonnel
 FK: idPersonnel ⊆ Pesronne (idPersonne)
-    dep ⊆ Derpartement (nomDep)
+    codeH ⊆ Hotel (codeH)
+    nomDep ⊆ Departement (nomDep)
 
 Client[idClient, nationnalite]
 PK: idClient
@@ -28,9 +29,8 @@ FK: codeH ⊆ Hotel (codeH)
     numC ⊆ Chambre (numC)
     idClient ⊆ Client (idClient)
 
-Service[codeH, numC, nomDep, date, heure, nomS, prixS, quantiteS, paye]
+Service[codeH, numC, nomDep, date, heure, nomS, prixS, quantiteS, paye, idClient]
 PK: (codeH, numC, nomDep, date, heure)
-FK: codeH ⊆ Hotel (codeH)
-    numC ⊆ Chambre (numC)
-    nomDep ⊆ Departement (nomDep)
-
+FK: numC ⊆ Chambre (numC)
+    (nomDep, codeH) ⊆ Departement (nomDep, codeH)
+    idClient ⊆ Client (idClient)
