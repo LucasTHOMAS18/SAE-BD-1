@@ -28,8 +28,8 @@ CREATE TABLE Chambre (
 CREATE TABLE Departement (
     codeH INT,
     nomDep VARCHAR(255),
-    directeurDep VARCHAR(255),
-    telDep VARCHAR(255),
+    directeurDep INT,
+    telDep VARCHAR(10),
     PRIMARY KEY (codeH, nomDep),
     FOREIGN KEY (codeH) REFERENCES Hotel(codeH),
     FOREIGN KEY (directeurDep) REFERENCES Personnel(idPersonnel)
