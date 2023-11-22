@@ -7,7 +7,6 @@ DROP TABLE Service cascade constraints;
 DROP TABLE Hotel cascade constraints;
 DROP TABLE Client cascade constraints; 
 
-
 CREATE TABLE Hotel (
     codeH INT PRIMARY KEY,
     nomH VARCHAR(255),
