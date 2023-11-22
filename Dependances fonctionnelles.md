@@ -5,4 +5,8 @@ idPersonne → nomPers, adressePers, dateNaissancePers
 idPersonnel → fonction, codeH, nomDep
 idClient → nationnalite
 codeH, numC, dateDebut → prixRes, dateFin, nbAdultes, nbEnfants, idClient
-codeH, numC, nomDep, date, heure → nomS, prixS, quantiteS, paye, idClient
+codeH, numC, nomDep, dateS, heureS → nomS, prixS, quantiteS, paye, idClient
+
+
+
+codeH, numC, nomDep, idPersonne, dateDebut, dateS, heureS
