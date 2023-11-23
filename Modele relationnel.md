@@ -16,17 +16,17 @@ Personne[idPersonne, nomPers, adresserPers, dateNaissancePers]
 PK: idPersonne
 NOT NULL: nomPers, adresserPers, dateNaissancePers
 
-Personnel[idPersonnel, nomPers, adresserPers, dateNaissancePers, fonction, codeH, nomDep]
+Personnel[idPersonnel, fonction, codeH, nomDep]
 PK: idPersonnel
 FK: idPersonnel ⊆ Personne (idPersonne)
     codeH ⊆ Hotel (codeH)
     nomDep ⊆ Departement (nomDep)
-NOT NULL: nomPers, adresserPers, dateNaissancePers, fonction
+NOT NULL: fonction
 
-Client[idClient, nomPers, adresserPers, dateNaissancePers, nationalite]
+Client[idClient, nationalite]
 PK: idClient
 FK: idClient ⊆ Personne (idPersonne)
-NOT NULL: nomPers, adresserPers, dateNaissancePers, nationalite
+NOT NULL: nationalite
 
 Reservation[codeH, numC, dateDebut, prixRes, dateFin, nbAdultes, nbEnfants, idClient]
 PK: (codeH, numC, dateDebut)
