@@ -42,7 +42,7 @@ CREATE TABLE Personnel (
 
 CREATE TABLE Client (
     idClient INT PRIMARY KEY,
-    nationnalite VARCHAR(20),
+    nationalite VARCHAR(20),
     FOREIGN KEY (idClient) REFERENCES Personne(idPersonne)
 );
 
