@@ -25,8 +25,8 @@ INSERT INTO Departement VALUES (1, 'Département A', NULL, '1234567890');
 INSERT INTO Departement VALUES (2, 'Département B', NULL, '0987654321');
 
 -- Insertions pour la table Service
-INSERT INTO Service VALUES (1, 101, 'Département A', TO_DATE('02-02-2023', 'DD-MM-YYYY'), TO_DATE('10:00', 'HH24:MI'), 'Service A', 50.00, 2, 0, 1);
-INSERT INTO Service VALUES (2, 201, 'Département B', TO_DATE('12-03-2023', 'DD-MM-YYYY'), TO_DATE('15:30', 'HH24:MI'), 'Service B', 75.00, 1, 1, 2);
+INSERT INTO Service VALUES (1, 101, TO_DATE('01-02-2023', 'DD-MM-YYYY'), 'Département A', TO_DATE('02-02-2023', 'DD-MM-YYYY'), TO_DATE('10:00', 'HH24:MI'), 'Service A', 50.00, 2, 0, 1);
+INSERT INTO Service VALUES (2, 201, TO_DATE('10-03-2023', 'DD-MM-YYYY'), 'Département B', TO_DATE('12-03-2023', 'DD-MM-YYYY'), TO_DATE('15:30', 'HH24:MI'), 'Service B', 75.00, 1, 1, 2);
 
 -- Insertions pour la table Personnel
 INSERT INTO Personnel VALUES (1, 'Réceptionniste', 1, 'Département A');
