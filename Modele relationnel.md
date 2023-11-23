@@ -29,8 +29,8 @@ FK: codeH ⊆ Hotel (codeH)
     numC ⊆ Chambre (numC)
     idClient ⊆ Client (idClient)
 
-Service[codeH, numC, nomDep, date, heure, nomS, prixS, quantiteS, paye, idClient]
-PK: (codeH, numC, nomDep, date, heure)
-FK: numC ⊆ Chambre (numC)
-    (nomDep, codeH) ⊆ Departement (nomDep, codeH)
+Service[codeH, numC, dateDebut, nomDep, dateS, heureS, nomS, prixS, quantiteS, paye, idClient]
+PK: (codeH, numC, dateDebut, nomDep, dateS, heureS)
+FK: (nomDep, codeH) ⊆ Departement (nomDep, codeH)
+    (dateDebut, numC, codeH) ⊆ Reservation (dateDebut, numC, codeH) 
     idClient ⊆ Client (idClient)
