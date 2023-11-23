@@ -23,10 +23,10 @@ FK: idPersonnel ⊆ Personne (idPersonne)
     nomDep ⊆ Departement (nomDep)
 NOT NULL: fonction
 
-Client[idClient, nationnalite]
+Client[idClient, nationalite]
 PK: idClient
 FK: idClient ⊆ Personne (idPersonne)
-NOT NULL: nationnalite
+NOT NULL: nationalite
 
 Reservation[codeH, numC, dateDebut, prixRes, dateFin, nbAdultes, nbEnfants, idClient]
 PK: (codeH, numC, dateDebut)
