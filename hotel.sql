@@ -49,7 +49,7 @@ CREATE TABLE Client (
 CREATE TABLE Departement (
     codeH INT,
     nomDep VARCHAR(50),
-    directeurDep INT NOT NULL,
+    directeurDep INT,
     telDep VARCHAR(10) NOT NULL,
     PRIMARY KEY (codeH, nomDep),
     FOREIGN KEY (codeH) REFERENCES Hotel(codeH),
