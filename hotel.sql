@@ -5,7 +5,7 @@ DROP TABLE Personnel cascade constraints;
 DROP TABLE Reservation cascade constraints;
 DROP TABLE Service cascade constraints;
 DROP TABLE Hotel cascade constraints;
-DROP TABLE Client cascade constraints; 
+DROP TABLE Client cascade constraints;
 
 CREATE TABLE Hotel (
     codeH INT PRIMARY KEY,
@@ -18,22 +18,22 @@ CREATE TABLE Hotel (
 CREATE TABLE Chambre (
     codeH INT,
     numC INT,
-    capacite INT,
-    superficie INT,
+    capacite INT NOT NULL,
+    superficie INT NOT NULL,
     PRIMARY KEY (codeH, numC),
     FOREIGN KEY (codeH) REFERENCES Hotel(codeH)
 );
 
 CREATE TABLE Personne (
     idPersonne INT PRIMARY KEY,
-    nomPers VARCHAR(20),
-    adressePers VARCHAR(50),
-    dateNaissancePers DATE
+    nomPers VARCHAR(20) NOT NULL,
+    adressePers VARCHAR(50) NOT NULL,
+    dateNaissancePers DATE NOT NULL
 );
 
 CREATE TABLE Personnel (
     idPersonnel INT PRIMARY KEY,
-    fonction VARCHAR(50),
+    fonction VARCHAR(50) NOT NULL,
     codeH INT,
     nomDep VARCHAR(50),
     FOREIGN KEY (idPersonnel) REFERENCES Personne(idPersonne),
@@ -42,15 +42,15 @@ CREATE TABLE Personnel (
 
 CREATE TABLE Client (
     idClient INT PRIMARY KEY,
-    nationalite VARCHAR(20),
+    nationalite VARCHAR(20) NOT NULL,
     FOREIGN KEY (idClient) REFERENCES Personne(idPersonne)
 );
 
 CREATE TABLE Departement (
     codeH INT,
     nomDep VARCHAR(50),
-    directeurDep INT,
-    telDep VARCHAR(10),
+    directeurDep INT NOT NULL,
+    telDep VARCHAR(10) NOT NULL,
     PRIMARY KEY (codeH, nomDep),
     FOREIGN KEY (codeH) REFERENCES Hotel(codeH),
     FOREIGN KEY (directeurDep) REFERENCES Personnel(idPersonnel)
@@ -62,8 +62,8 @@ CREATE TABLE Reservation (
     codeH INT,
     numC INT,
     dateDebut DATE,
-    prixRes DECIMAL(10, 2),
-    dateFin DATE,
+    prixRes DECIMAL(10, 2) NOT NULL,
+    dateFin DATE NOT NULL,
     nbAdultes INT,
     nbEnfants INT,
     idClient INT,
@@ -79,7 +79,7 @@ CREATE TABLE Service (
     nomDep VARCHAR(50),
     dateS DATE,
     heureS DATE,
-    nomS VARCHAR(50),
+    nomS VARCHAR(50) NOT NULL,
     prixS DECIMAL(10, 2),
     quantiteS INT,
     paye NUMBER(1),
