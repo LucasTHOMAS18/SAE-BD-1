@@ -9,9 +9,9 @@ DROP TABLE Client cascade constraints;
 
 CREATE TABLE Hotel (
     codeH INT PRIMARY KEY,
-    nomH VARCHAR(255),
-    GPS VARCHAR(255),
-    adresseH VARCHAR(255),
+    nomH VARCHAR(50),
+    GPS VARCHAR(25),
+    adresseH VARCHAR(50),
     qualite INT
 );
 
@@ -26,29 +26,29 @@ CREATE TABLE Chambre (
 
 CREATE TABLE Personne (
     idPersonne INT PRIMARY KEY,
-    nomPers VARCHAR(255),
-    adressePers VARCHAR(255),
+    nomPers VARCHAR(20),
+    adressePers VARCHAR(50),
     dateNaissancePers DATE
 );
 
 CREATE TABLE Personnel (
     idPersonnel INT PRIMARY KEY,
-    fonction VARCHAR(255),
+    fonction VARCHAR(50),
     codeH INT,
-    nomDep VARCHAR(255),
+    nomDep VARCHAR(50),
     FOREIGN KEY (idPersonnel) REFERENCES Personne(idPersonne),
     FOREIGN KEY (codeH) REFERENCES Hotel(codeH)
 );
 
 CREATE TABLE Client (
     idClient INT PRIMARY KEY,
-    nationnalite VARCHAR(255),
+    nationnalite VARCHAR(20),
     FOREIGN KEY (idClient) REFERENCES Personne(idPersonne)
 );
 
 CREATE TABLE Departement (
     codeH INT,
-    nomDep VARCHAR(255),
+    nomDep VARCHAR(50),
     directeurDep INT,
     telDep VARCHAR(10),
     PRIMARY KEY (codeH, nomDep),
@@ -76,10 +76,10 @@ CREATE TABLE Service (
     codeH INT,
     numC INT,
     dateDebut DATE,
-    nomDep VARCHAR(255),
+    nomDep VARCHAR(50),
     dateS DATE,
     heureS DATE,
-    nomS VARCHAR(255),
+    nomS VARCHAR(50),
     prixS DECIMAL(10, 2),
     quantiteS INT,
     paye NUMBER(1),
