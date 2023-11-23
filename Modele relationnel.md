@@ -18,7 +18,7 @@ NOT NULL: nomPers, adresserPers, dateNaissancePers
 
 Personnel[idPersonnel, fonction, codeH, nomDep]
 PK: idPersonnel
-FK: idPersonnel ⊆ Pesronne (idPersonne)
+FK: idPersonnel ⊆ Personne (idPersonne)
     codeH ⊆ Hotel (codeH)
     nomDep ⊆ Departement (nomDep)
 NOT NULL: fonction
