@@ -10,7 +10,7 @@ Departement[codeH, nomDep, directeurDep, telDep]
 PK: (codeH, nomDep)
 FK: codeH ⊆ Hotel (codeH)
     directeurDep ⊆ Personnel (idPersonnel)
-NOT NULL: directeurDep, telDep
+NOT NULL: telDep
 
 Personne[idPersonne, nomPers, adresserPers, dateNaissancePers]
 PK: idPersonne
