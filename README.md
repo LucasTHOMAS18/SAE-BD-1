@@ -3,7 +3,7 @@
 ## Diagramme Entité-Association
 ![Diagramme Entité Association](conception/Diagramme%20E-A.drawio.png)
 
-## Dependances fonctionnelle
+## Dépendances fonctionnelles
 codeH → nomH, adresseH, GPS, qualiteH  
 codeH, numC → capacite, superficie  
 codeH, nomDep → directeurDep, telDep  
@@ -13,7 +13,7 @@ idClient → nomPers, adressePers, dateNaissancePers, nationalite
 codeH, numC, dateDebut → prixRes, dateFin, nbAdultes, nbEnfants, idClient  
 codeH, numC, dateDebut, nomDep, dateS, heureS → nomS, prixS, quantiteS, paye, idClient  
 
-## Modele relationnel
+## Modèle relationnel
 **Hotel**[codeH, nomH, GPS, adresseH, qualite]  
 **PK**: codeH  
 
